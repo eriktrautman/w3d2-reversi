@@ -43,6 +43,8 @@ class Game
       new_x += dir_coords[0]
       new_y += dir_coords[1]
 
+      # MZ: The first two and maybe third check could be pulled out
+      # and dropped into helper methods.  They probably have re-use value
       return [] unless B_RANGE.include?(new_x) && B_RANGE.include?(new_y)
       return conversion_chain if @board.board[new_x][new_y] == @current_player.color
       return [] if @board.board[new_x][new_y].nil?
